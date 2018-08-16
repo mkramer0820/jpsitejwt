@@ -3,21 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CustomersComponent } from './customers/customers.component';
+import { CustomersComponent } from './modules/customers/customers/customers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './modules/navbar/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
-import { DashComponent } from './dash/dash.component';
+import { DashComponent } from './modules/dash/dash/dash.component';
 import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http'
-import { ApiService } from './api.service'
+import { Apiservice } from './shared/apiservice.service'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CustomersComponent,
     NavbarComponent,
     DashComponent
@@ -37,7 +35,7 @@ import { ApiService } from './api.service'
     MatCardModule,
     MatMenuModule,
     HttpClientModule,
-    ApiService,
+    Apiservice,
     HttpClientXsrfModule.withOptions({
             cookieName: 'csrftoken',
             headerName: 'X-CSRF-TOKEN'})
